@@ -1,0 +1,38 @@
+<style>
+.blockquote-italic{	
+	margin:20px 0px 20px 0px;
+	background-color: #dddddd;
+	padding:20px 20px 20px 20px;
+
+}
+
+.blockquote-italic-content{
+	font-size:140%;
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+	line-height: 1.8em;
+	color:#111111;
+	border-color:black;
+	
+}
+
+.blockquote-italic-source{
+	text-align:right;
+	color:#111111;
+	margin-top:20px;
+	
+}
+
+
+</style>
+<div class='row blockquote-italic'>
+	<div class='col-xs-12 blockquote-italic-content'>
+		{{ .Get "text" | safeHTML }}
+	</div>
+	{{ if .Get "source" }}	
+	<div class='col-xs-12 blockquote-italic-source'>
+		-- {{ .Get "source" | safeHTML }}
+	</div>
+	{{ end }}	
+</div>
+

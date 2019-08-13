@@ -1,0 +1,34 @@
+<style>
+.blockquote-bold{
+	color:#111111;
+	background-color: #ffffff;
+	padding:20px 20px 20px 20px;
+	margin:10px 0px 10px 0px;
+}
+
+.blockquote-bold-content{	
+	font-size:140%;
+	text-transform: uppercase;
+	line-height: 1.8em;
+	border-color:black;
+	font-weight:bold;
+	
+}
+
+.blockquote-bold-source{
+	text-align:right;	
+}
+
+
+</style>
+<div class='blockquote-bold'>
+	<div class='col-xs-12 blockquote-bold-content'>
+		{{ .Get "text" | safeHTML }}
+	</div>
+	{{ if .Get "source" }}
+	<div class='col-xs-12 blockquote-bold-source'>
+		- {{ .Get "source" | safeHTML  }}
+	</div>
+	{{ end }}
+</div>
+

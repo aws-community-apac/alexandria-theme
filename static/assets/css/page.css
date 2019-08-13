@@ -1,0 +1,117 @@
+html, body{
+	font-size:16px;
+	background-color: #fafafa;
+	color:black;
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.link-dark a{
+	color:white;
+}
+.link-dark a:hover{
+	color:#cc0000;
+}
+
+.content li + li{
+  margin-top: .75em;
+  line-height:1.7em;
+}
+
+a.navbar-item.is-active, a.navbar-item:hover, a.navbar-link.is-active, a.navbar-link:hover{
+	color:#cc0000;
+	background-color:white;
+}
+.font-lora{
+	font-family: 'Lora', serif;
+}
+.font-nitti{
+	font-family: 'Nitti Grotesk';
+}
+.font-ptserif{
+	font-family: 'PT Serif', serif;
+}
+.font-inconsolata{
+	font-family: 'Inconsolata', monospace;
+}
+.font-size-200{
+	font-size:200%;
+}
+.font-size-90{
+	font-size:90%;
+}
+.font-size-80{
+	font-size:90%;
+}
+.content p{
+	color:#111111;
+	font-size:100%;
+	line-height: 2em;
+}
+.content p > strong{
+	text-decoration: underline;
+}
+.content h1{
+	color:#111111;
+	margin-top:3em !important;
+	font-weight: bold;
+	font-size:120%;
+	/*border-bottom:2px solid black;*/
+	/*text-decoration: underline;*/
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+.content h2{
+	color:#111111;
+	margin-top:3em !important;
+	font-weight: bold;
+	font-size:100%;
+	/*border-bottom:2px solid black;*/
+	/*text-decoration: underline;*/
+	text-transform: uppercase;
+}
+.content a{
+	background-color: black;
+	padding:3px 5px 3px 5px;
+	color:white;
+	font-weight: bold;
+}
+.title{
+	line-height: 1.3em;
+	font-size:220%;
+}
+#post-title{
+	border-top:5px solid black;
+	padding-top:10px;
+}
+#post-info{
+	border-top:2px solid black;
+	margin-top:30px;
+	padding-top:20px;
+	font-size:80%;
+	margin-bottom:30px;
+	padding-bottom:20px;
+	border-bottom:2px solid black;
+}
+.content p:first-child:first-letter {
+	color: #cc0000;
+	float: left;
+	font-size: 75px;
+	line-height: 60px;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-left: 3px;
+}
+.post-title{
+	border-top:5px solid white;
+	background-color:black;
+}
+.footnotes{
+	border-bottom:5px solid black;
+	font-size:90%;
+	line-height: 1.7em;
+}
+.footnotes li{
+	margin-bottom:20px;
+}
+.notification a:not(.button){
+	color:white;
+}

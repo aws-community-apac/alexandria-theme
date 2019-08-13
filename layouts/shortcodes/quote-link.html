@@ -1,0 +1,49 @@
+<style>
+.quote-link{
+	padding:20px 10px 10px 20px;
+	font-size:110%;
+	background-color:#ffffff;
+	color:#111111;
+	margin-top:10px;
+}
+
+.quote-link-content{	
+	margin-top:10px;	
+	border-left:5px solid black;
+	line-height: 1.5em;
+	border-color:black;
+	padding-left:10px;
+
+}
+
+.quote-link-source{
+	text-align:left;
+	
+}
+
+.quote-link-reference>a{
+	text-align:left;
+	color:#8899a6;
+	font-size:80%;
+	text-decoration: underline;
+	
+}
+
+
+</style>
+
+<div class='quote-link row'>
+	<div class='col-xs-12 quote-link-source'>
+	{{ .Get "source" | safeHTML }}:
+	</div>
+
+	<div class='col-xs-12 quote-link-content'>
+		{{ .Get "text" | safeHTML }}
+	</div>
+
+	<div class='col-xs-12 quote-link-reference'>
+		<a href='{{ .Get "reference" }}' target="_blank">{{ .Get "reference" }}</a>
+	</div>
+
+</div>
+

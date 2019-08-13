@@ -1,0 +1,41 @@
+<style>
+.blockquote-normal{
+	background-color: #ffffff;
+	margin-bottom:10px;
+	padding:20px 20px 20px 20px;
+	color:#111111;
+	margin-top:10px;
+}
+
+.blockquote-normal-content{	
+		font-size:120%;
+
+	line-height: 1.7em;
+	border-color:black;
+	
+}
+
+.blockquote-normal-source{
+	text-align:right;
+	
+}
+
+.blockquote-container{
+	border:3px solid #dddddd;padding:10px;
+}
+
+</style>
+
+<div class='blockquote-normal'>
+	<div class="blockquote-container">
+	<div class='blockquote-normal-content'>
+		{{ .Get "text" | safeHTML }}
+	</div>
+	{{ if .Get "source" }}
+	<div class='blockquote-normal-source'>
+		-- {{ .Get "source" | safeHTML }}
+	</div>
+	{{ end }}
+	</div>
+</div>
+

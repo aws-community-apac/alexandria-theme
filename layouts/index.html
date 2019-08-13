@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ .Site.Title}}</title>
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/logo.png">
+		<link rel="shortcut icon" href="/assets/images/logo.png">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+		
+		<link href="/assets/css/helpers.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+		<link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+		
+		<style>
+		</style>
+	</head>
+	<body class="">
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
+				{{ partial "nav.html" . }}
+			</div>
+		</div>
+		<div class="columns" style="background:#f2f2f2;padding-top:50px;padding-bottom:20px;">
+			<div class="column is-8 is-offset-2">
+				<div class="columns">
+					<div class="column">
+						
+						
+						<div class="columns">
+							<div class="column is-12">
+								<img src='/assets/images/ug-logo.png' width='100px'>
+								
+							</div>
+						</div>
+						<div class="columns">
+							<div class="column is-12">
+								{{$.Site.Params.description}}
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
+				
+				
+				<div class="columns is-mobile">
+					<div class="column">
+						<div class="bold title is-4">
+							ARTICLES
+						</div>
+					</div>
+				</div>
+				{{ range  (where .Data.Pages "Section" "articles") }}
+				<div class="columns">
+					{{if .Params.Featured_Image }}
+					<div class="column is-4">
+						<div class="gray margin-bottom-one is-hidden-tablet">
+							<small>{{.Date.Format "Monday, January 2, 2006"}}</small>
+						</div>
+						<div class="post-title title is-4 bold is-hidden-tablet">
+							<a href="{{ .URL }}">{{.Title}}</a>
+						</div>
+						<img src="{{.Params.Featured_Image.Url}}">
+						<div class="gray margin-bottom-one has-text-centered">
+							<small class="image-credit">{{.Params.Featured_Image.Credit}}</small>
+						</div>
+						
+					</div>
+					<div class="column is-8">
+						<div class="gray margin-bottom-one is-hidden-mobile">
+							<small>{{.Date.Format "Monday, January 2, 2006"}}</small>
+						</div>
+						<div class="post-title title is-4  bold is-hidden-mobile">
+							<a href="{{ .URL }}">{{.Title}}</a>
+						</div>
+						<p class="description">
+							{{.Description}}
+						</p>
+						
+						<div class="">
+							<a href="{{.URL}}" class="button is-danger is-outlined margin-top-one">Read More</a>
+						</div>
+					</div>
+					{{else}}
+					<div class="column is-12">
+						<div class="gray margin-bottom-one">
+							<small>{{.Date.Format "Monday, January 2, 2006"}}</small>
+						</div>
+						<div class="post-title title is-4 bold">
+							
+							<a href="{{ .URL }}">{{.Title}}</a>
+						</div>
+						<p class="margin-top-one">
+							{{.Description}}
+						</p>
+						
+						<div class="">
+							<a href="{{.URL}}" class="button is-danger is-outlined margin-top-one">Read More</a>
+						</div>
+					</div>
+					{{end}}
+					
+				</div>
+				<hr/>
+				{{ end }}
+			</div>
+			
+		</div>
+		{{ partial "footer.html" . }}
+		{{ partial "js.html" . }}
+		{{ partial "navModal.html" . }}
+		
+	</body>
+</html>

@@ -1,0 +1,160 @@
+html, body{
+	font-size:17px;
+	background-color: #fafafa;
+	color:black;	
+	font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; 
+    
+	
+}
+
+.link-dark a{
+	color:white;
+}
+
+.link-dark a:hover{
+	color:#cc0000;
+}
+
+a.navbar-item.is-active, a.navbar-item:hover, a.navbar-link.is-active, a.navbar-link:hover{
+	color:#cc0000;
+	background-color:white;
+}
+
+.font-lora{
+	font-family: 'Lora', serif;
+}
+
+.font-ptserif{
+    font-family: 'PT Serif', serif;
+}
+
+
+.font-size-200{
+	font-size:200%;
+}
+
+
+.font-size-90{
+	font-size:90%;
+}
+
+.font-size-80{
+	font-size:90%;
+}
+
+
+.content p{
+	color:#111111;
+	line-height: 1.7em;
+}
+
+.content p > strong{
+	text-decoration: underline;
+}
+
+.content a{
+	color:#0074D9;
+}
+
+.content h1{
+	color:#111111;
+	margin-top:3em !important;
+	font-weight: bold;
+	font-size:120%;
+	/*border-bottom:2px solid black;*/
+	/*text-decoration: underline;*/
+	text-transform: uppercase;
+	text-decoration: underline;
+
+}
+
+.list-events a{
+	color:black;
+	background-color: white;
+	padding:3px;
+}
+
+.list-events a:hover{
+}
+
+.list-articles a{
+	color:white;
+	background-color: black;
+	padding:3px;
+}
+
+.list-articles a:hover{
+	color:black;
+	background-color: white;
+}
+
+.content h2{
+	color:#111111;
+	margin-top:3em !important;
+	font-weight: bold;
+	font-size:100%;
+	/*border-bottom:2px solid black;*/
+	/*text-decoration: underline;*/
+	text-transform: uppercase;
+}
+
+.content a{
+	background-color: black;
+	padding:3px 5px 3px 5px;
+	color:white;
+
+}
+
+.content li + li{
+  margin-top: .75em;
+  line-height:1.7em;
+}
+
+small.image-credit{
+	font-size:80%;
+}
+
+.title{
+	line-height: 1.3em;
+	font-size:220%;
+
+}
+
+.description{
+	line-height: 1.5em;
+	font-size:95%;
+}
+
+.link a{
+	color:black;
+}
+
+.link a:hover{
+	color:#cc0000;
+}
+.post-title a{
+	color:black;
+}
+
+.post-title a:hover{
+	color:#cc0000;
+}
+.border-container{
+	border-top:5px solid black;
+	padding-top:20px;
+	margin-top:30px;
+	padding-bottom:20px;
+}
+
+.menu{
+	font-size:80%;
+}
+
+.menu a{
+	color:black;
+}
+
+.menu a:hover{
+	color:#cc0000;
+}
+

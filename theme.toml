@@ -1,0 +1,13 @@
+name = "Dingo"
+license = "MIT"
+licenselink = "https://github.com/donnieprakoso"
+description = ""
+homepage = "https://donnie.id/"
+tags = []
+features = []
+min_version = "0.20"
+
+[author]
+  name = "Donnie Prakoso"
+  homepage = "https://donnie.id"
+

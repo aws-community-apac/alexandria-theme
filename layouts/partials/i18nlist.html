@@ -1,0 +1,12 @@
+
+{{ if .IsTranslated }}
+<h4>{{ i18n "translations" }}</h4>
+<ul>
+    {{ range .Translations }}
+    <li class="italic">
+    	This article is also available in <a href="{{.Permalink}}" style="color:#ff0000">{{ .Language.LanguageName }}</a>
+    </li>
+    {{ end}}
+</ul>
+<hr/>
+{{ end }}

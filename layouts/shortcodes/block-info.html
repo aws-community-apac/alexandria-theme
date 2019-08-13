@@ -1,0 +1,5 @@
+<div class="notification is-info">
+  <div class="title black bold is-4 text-uppercase">{{ .Get "title" | safeHTML }}</div>
+  <div class="notification-text" style="line-height:1.7em;">{{ .Get "text" | markdownify }}</div>
+</div>
+

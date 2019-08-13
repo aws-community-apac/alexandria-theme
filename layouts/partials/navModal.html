@@ -1,0 +1,47 @@
+<div id="modal-nav" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="title is-4 white bold">
+	    {{$.Site.Params.name}}
+    </div>
+    <hr/>
+    <div class="link-dark title is-5">
+      <a href="/" class="bold">Home</a>
+    </div>
+    <div class="link-dark title is-5">
+      <a href="/about" class=" white bold">About</a>
+    </div>
+<hr/>
+            <div class="link-dark title is-5">
+              <a href="https://github.com/donnieprakoso" target="_blank">Github</a>
+            </div>  
+
+
+  </div>  
+  <button id="modal-nav-close" class="modal-close is-large"></button>
+</div>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+
+
+    $(".navbar-burger").click(function() {
+
+      $(".navbar-burger").toggleClass("is-active");
+      
+
+      $("#modal-nav").toggleClass("is-active");
+
+
+    });
+
+    $("#modal-nav-close").click(function(){
+     $(".navbar-burger").toggleClass("is-active");
+     
+
+     $("#modal-nav").toggleClass("is-active");
+   });
+  });
+
+</script>

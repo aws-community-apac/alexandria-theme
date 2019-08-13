@@ -1,0 +1,30 @@
+<div class="margin-top-one">
+	&mdash;&mdash;&mdash;&mdash;&mdash;
+	<div class="black bold margin-bottom-one">People In This Post</div>
+	<div class="columns is-mobile" style="overflow-x: scroll;">
+		{{range $index,$element := .Params.people}}
+		<div class="column">
+			<div class="text-left">
+				<div><img src="{{.picture}}" width="64px" style="border-radius:50%;"></div>
+				<div><small class="bold">{{.name}}</small></div>
+				{{ if eq .type "twitter" }}
+				<div>
+					<a href="https://twitter.com/{{.displayname}}" target="_blank" class="" style="color:#00aced;">
+						<small class="bold">@{{.displayname}}</small>
+					</a>
+				</div>
+				{{ else if eq .type "website" }}
+				<div>
+					<a href="{{.link}}" target="_blank" class="red" style="">
+						<small class="bold">{{.link}}</small>
+					</a>
+				</div>
+				{{end}}
+			</div>
+			
+		</div>
+
+
+		{{end}}
+	</div>
+</div>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ .Title }}</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/logo.png">
+		<link rel="shortcut icon" href="/assets/images/logo.png">
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+		
+
+		<link href="/assets/css/helpers.css" rel="stylesheet" type="text/css">
+		<link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+		<link href="/assets/css/font-nitti-grotesk.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+		<link rel="stylesheet" href="/assets/css/highlight-default.css">
+		<link rel="stylesheet" href="/assets/css/syntax-monokai.css">
+		<link href="/assets/css/single.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://unpkg.com/mermaid@7.0.3/dist/mermaid.min.css">
+		{{ partial "opengraph.html" . }}
+		
+		{{ template "_internal/google_news.html" . }}
+		{{ template "_internal/schema.html" . }}
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:site" content="{{.Site.Title}}">
+		<meta property="twitter:title" content="{{if .Title }}{{.Title}}{{else}}{{.Site.Title}}{{end}}">
+		<meta property="twitter:image" content="{{ if .Params.Featured_Image }}{{.Params.Featured_Image}}{{ end }}">
+		<meta property="twitter:description" content="{{.Description}}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700" rel="stylesheet">
+		<style>
+		{{ if .Params.Featured_Image }}
+		.cover {
+			background: linear-gradient(
+				rgba(20,20,20, .5),
+				rgba(20,20,20, .5)),
+			url({{.Params.Featured_Image.Url}});
+			background-size:cover;
+		}
+		{{end}}
+		</style>
+	</head>
+	<body class="">
+		<div class="container">
+			<div class="column is-8 is-offset-2">
+				{{ partial "nav.html" . }}
+			</div>
+		</div>
+		<section class="cover hero is-fullheight black-bg">
+			<div class="hero-body">
+				<div class="container">
+					<div class="columns">
+						<div class="column is-8 is-offset-2">
+							<h1 class="title is-1 font-lora has-text-centered white">
+							{{.Title}}
+							</h1>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column is-6 is-offset-3 has-text-centered">
+							<h2 class="subtitle font-nitti white">
+							{{.Description}}
+							</h2>
+							<a href="#content" class="button is-danger">Read Now</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<div class="container">
+			<div class="column is-6 is-offset-3">
+				<a name="content"></a>
+				<div id="post-info">
+					This post is published on {{.Date.Format "Monday, January 2, 2006"}} and categorized as <span class="" style="font-size:70%;padding:3px 10px 3px 10px; background-color:#FF4136; color:white; font-weight:bold;text-transform: uppercase;">{{.Section}}</span> with <span id="text-pageviews" class="bold">_</span> views.
+					{{ if .IsTranslated }}
+					<ul style="margin-top:10px;">
+						{{ range .Translations }}
+						<li class="italic">
+							This article is also available in <a href="{{.Permalink}}" style="color:#ff0000">{{ .Language.LanguageName }}</a>
+						</li>
+						{{ end}}
+					</ul>
+					{{ end }}
+					{{if .Params.inprogress}}
+					{{ partial "infoDraft"}}
+					{{end}}
+				</div>
+				{{ if .Params.people}}
+				{{partial "people" .}}
+				{{end}}
+				<!-- 			<div id="" class="toc text-left">
+					<div class="title is-5 white bold">
+							<span class="bg-white black" style="padding:5px 10px 5px 10px;">Table of Contents</span>
+					</div>
+					{{ .TableOfContents }}
+				</div>
+				<hr class="border--white"> -->
+				
+				
+				
+				{{if .Params.inprogress}}
+				<div id="content-post" class="content black">
+					{{else}}
+					<div id="content-post" class="content black">
+						{{end}}
+						{{.Content}}
+					</div>
+					<div>
+						<div class="black bold margin-bottom-one text-uppercase" style="color:#cc0000;">Like this article?</div>
+						<div class="columns margin-top-one has-text-centered">
+							<div class="column">
+								<a target="_blank" class=""  href="https://twitter.com/intent/tweet?url={{ .URL | absURL }}&text={{ .Title }}&via=">
+									<i class="fab fa-twitter fa-2x" style="color:#00aced;" aria-hidden="true"></i>
+								</a>
+								<span class="margin-left-one margin-right-one" style=""></span>
+								<a target="_blank" class="" href="https://www.facebook.com/sharer/sharer.php?u={{ .URL | absURL }}">
+									<i class="fab fa-facebook fa-2x"  style="color:#3b5998;" aria-hidden="true"></i>
+								</a>
+								<span class="margin-left-one margin-right-one" style=""></span>
+								<a  target="_blank" class="" href="https://plus.google.com/share?url={{ .URL | absURL }}">
+									<i class="fab fa-google-plus fa-2x"  style="color:#dd4b39;" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+						<hr/>
+					</div>
+					
+					
+					{{ with .NextInSection }}
+					<div class="">
+						<div class="black bold margin-bottom-one text-uppercase" style="color:#cc0000;">Read Next</div>
+						<a class="font-lora black title is-4" style="" href="{{.Permalink}}"> {{.Title}}</a>
+						<p class="margin-top-one">{{.Description}}</p>
+						<a href="{{.Permalink}}" class="button is-danger is-outlined margin-top-one">Read More</a>
+						<hr/>
+					</div>
+					{{ end }}
+					
+					{{ with .PrevInSection }}
+					<div class="margin-top-one">
+						<div class="black bold margin-bottom-one text-uppercase" style="color:#cc0000;">Previously</div>
+						<a class="font-lora black title is-4" style="" href="{{.Permalink}}"> {{.Title}}</a>
+						<p class="margin-top-one">{{.Description}}</p>
+						<a href="{{.Permalink}}" class="button is-danger is-outlined margin-top-one">Read More</a>
+					</div>
+					<hr/>
+					{{ end }}
+					{{partial "analytics.html" . }}
+				</div>
+			</div>
+		</div>
+		{{partial "footer.html" . }}
+		{{ partial "initjs.html" }}
+		{{ partial "js.html" . }}
+		{{ partial "navModal.html" . }}
+	</body>
+</html>
